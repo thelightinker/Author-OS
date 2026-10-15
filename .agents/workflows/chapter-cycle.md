@@ -94,7 +94,7 @@ nodes:
 ## 1. INVARIANTS (Ràng buộc bất biến)
 
 1. **Node-Scoped Grounding**: Khi chạy Node $X$, Agent chỉ nạp Spine Matrix + file `chapter-cycle/node-*.md` tương ứng + Skill của Stage đó. CẤM nạp chéo node khác.
-2. **Context Isolation (SEQ-004/006)**: Tại Node 8 (`INFORMED_REVIEW`), `master-orchestrator` nạp `node-08-review.md` để brief context sạch cho `quality-auditor`; Auditor chỉ nạp bản thảo và [quality-engine.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/quality-engine.md).
+2. **Context Isolation (SEQ-004/006)**: Tại Node 8 (`INFORMED_REVIEW`), `master-orchestrator` nạp `node-08-review.md` để brief context sạch cho `quality-auditor`; Auditor chỉ nạp bản thảo và [quality-engine.md](../rules/quality-engine.md).
 3. **No Evidence → No Transition**: Mọi state transition đòi hỏi artifact tồn tại thực tế trên đĩa (DoD nhị phân).
 
 ---
@@ -115,16 +115,16 @@ nodes:
 
 | Node | Giai đoạn (Stage) | File Hợp Đồng Chi Tiết | Bất Biến & Chuỗi Kiểm Tra Cốt Lõi |
 |---|---|---|---|
-| **BLUEPRINT** | Stage 2: Architecture | [node-01-blueprint.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-01-blueprint.md) | Phân rã Card v3, 3–5 section files, trần `budget_words_max` (3,500–5,000 từ). |
-| **GATE_3_BLUEPRINT** | Stage 2: Architecture | [node-02-goal-lock.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-02-goal-lock.md) | **Goal Lock** bất biến sau Gate 3 trên **Reader Promise**; mở khóa tường minh qua lệnh **GOAL_UNLOCK**. |
-| **KNOWLEDGE_EXCAVATION** | Stage 3: Excavation | [node-03-excavation.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-03-excavation.md) | Bắt buộc phỏng vấn: `story_cards_interviewed == true && story_cards_ready == true`, kết nối **author-excavation**. |
-| **SECTION_DRAFTING** | Stage 4: Drafting | [node-04-drafting.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-04-drafting.md) | Chấp bút tuần tự từng section H2, co-pilot humanizer, **Feedback Carry-Forward**, yield `[EVIDENCE-REQUEST: req_XX]`. |
-| **MECHANICAL_SCREEN** | Stage 4: Drafting | [node-05-mechanical-screen.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-05-mechanical-screen.md) | L0 stdlib linter `repair_invariants.py`, 5 tiêu chuẩn nhị phân Layer 1 tại `quality-engine.md`. |
-| **SECTION_REVISION** | Stage 5: Revision | [node-06-revision.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-06-revision.md) | Phẫu thuật sửa 1 file, `WHAT TO KEEP`, 3 Pass, conditional humanizer, hạn ngạch `revision_round <= 3`. |
-| **CHAPTER_ASSEMBLY** | Stage 4: Drafting | [node-07-assembly.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-07-assembly.md) | L0 stdlib compiler `assemble_chapter.py`, ghép draft alphanumeric, banner nguồn sự thật. |
-| **INFORMED_REVIEW** | Stage 5: Revision & Audit | [node-08-review.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-08-review.md) | **quality-auditor** trong **Chapter Review Mode**, hàng rào ngữ cảnh SEQ-004/006, phán quyết `PASS / REVISE / RESTRUCTURE`. |
-| **MEMORY_UPDATE** | Stage 5: Revision & Audit | [node-09-memory-update.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-09-memory-update.md) | CLI deterministic: **record-story-usage** & **update-continuity**, cập nhật `summaries.md`, `terms.md`, `decisions.md`. |
-| **SPINE_CHECK** | Stage 5: Revision & Audit | [node-10-spine-check.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle/node-10-spine-check.md) | Kiểm tra Leads-to, gắn cờ `SPINE-FLAG`, tính Blast Radius cập nhật `book_spine.md`, chuyển sang `DONE`. |
+| **BLUEPRINT** | Stage 2: Architecture | [node-01-blueprint.md](chapter-cycle/node-01-blueprint.md) | Phân rã Card v3, 3–5 section files, trần `budget_words_max` (3,500–5,000 từ). |
+| **GATE_3_BLUEPRINT** | Stage 2: Architecture | [node-02-goal-lock.md](chapter-cycle/node-02-goal-lock.md) | **Goal Lock** bất biến sau Gate 3 trên **Reader Promise**; mở khóa tường minh qua lệnh **GOAL_UNLOCK**. |
+| **KNOWLEDGE_EXCAVATION** | Stage 3: Excavation | [node-03-excavation.md](chapter-cycle/node-03-excavation.md) | Bắt buộc phỏng vấn: `story_cards_interviewed == true && story_cards_ready == true`, kết nối **author-excavation**. |
+| **SECTION_DRAFTING** | Stage 4: Drafting | [node-04-drafting.md](chapter-cycle/node-04-drafting.md) | Chấp bút tuần tự từng section H2, co-pilot humanizer, **Feedback Carry-Forward**, yield `[EVIDENCE-REQUEST: req_XX]`. |
+| **MECHANICAL_SCREEN** | Stage 4: Drafting | [node-05-mechanical-screen.md](chapter-cycle/node-05-mechanical-screen.md) | L0 stdlib linter `repair_invariants.py`, 5 tiêu chuẩn nhị phân Layer 1 tại `quality-engine.md`. |
+| **SECTION_REVISION** | Stage 5: Revision | [node-06-revision.md](chapter-cycle/node-06-revision.md) | Phẫu thuật sửa 1 file, `WHAT TO KEEP`, 3 Pass, conditional humanizer, hạn ngạch `revision_round <= 3`. |
+| **CHAPTER_ASSEMBLY** | Stage 4: Drafting | [node-07-assembly.md](chapter-cycle/node-07-assembly.md) | L0 stdlib compiler `assemble_chapter.py`, ghép draft alphanumeric, banner nguồn sự thật. |
+| **INFORMED_REVIEW** | Stage 5: Revision & Audit | [node-08-review.md](chapter-cycle/node-08-review.md) | **quality-auditor** trong **Chapter Review Mode**, hàng rào ngữ cảnh SEQ-004/006, phán quyết `PASS / REVISE / RESTRUCTURE`. |
+| **MEMORY_UPDATE** | Stage 5: Revision & Audit | [node-09-memory-update.md](chapter-cycle/node-09-memory-update.md) | CLI deterministic: **record-story-usage** & **update-continuity**, cập nhật `summaries.md`, `terms.md`, `decisions.md`. |
+| **SPINE_CHECK** | Stage 5: Revision & Audit | [node-10-spine-check.md](chapter-cycle/node-10-spine-check.md) | Kiểm tra Leads-to, gắn cờ `SPINE-FLAG`, tính Blast Radius cập nhật `book_spine.md`, chuyển sang `DONE`. |
 
 ---
 

@@ -13,7 +13,7 @@ version: 1.0.0
 ## 0. Schema Authority, Governance & Context-Aware Grounding
 
 - **Ràng buộc Liêm chính Tự sự (Deterministic Binding - P1)**:
-  - Agent thực thi skill này **BẮT BUỘC (MUST)** nạp và tuân thủ [`.agents/rules/story-integrity.md`](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/story-integrity.md) trong toàn bộ phiên phỏng vấn và ghi nhận dữ liệu vào `story_bank.md`. Tuyệt đối cấm suy diễn hoặc điền khuyết chi tiết sự kiện chưa được tác giả xác nhận.
+  - Agent thực thi skill này **BẮT BUỘC (MUST)** nạp và tuân thủ [`.agents/rules/story-integrity.md`](../../rules/story-integrity.md) trong toàn bộ phiên phỏng vấn và ghi nhận dữ liệu vào `story_bank.md`. Tuyệt đối cấm suy diễn hoặc điền khuyết chi tiết sự kiện chưa được tác giả xác nhận.
 - **Schema Authority**:
   - `templates/story-bank-template.md`: Chuẩn cấu trúc bắt buộc cho `story_bank.md` và các thẻ `S-XXX` (Title, Core Insight, Sensory Anchor, 5-Second Moment, Reframe Note, Used In list).
 - **Quy tắc Grounding**:

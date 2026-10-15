@@ -25,3 +25,11 @@ writing-agent-deep-audit.md
 # IDE & Internal State
 .superpowers/
 .worktrees/
+
+# Environment & Secrets
+.env
+.env.*
+*.key
+*.pem
+*.token
+credentials.json

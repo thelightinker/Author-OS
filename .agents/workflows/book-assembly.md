@@ -76,7 +76,7 @@ Khi cần thực hiện kiểm định hoặc thao tác độc lập trên toàn
 ---
 
 ### [NODE 5: VOICE_AUDIT]
-- **Vai trò thực thi**: `chapter-crafter` trong chế độ **Diagnostic Read-Only Pass** (tuân thủ quy chuẩn Voice Audit Scan tại [manuscript-cold-read.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/manuscript-cold-read.md)).
+- **Vai trò thực thi**: `chapter-crafter` trong chế độ **Diagnostic Read-Only Pass** (tuân thủ quy chuẩn Voice Audit Scan tại [manuscript-cold-read.md](../rules/manuscript-cold-read.md)).
 - **Input**: `voice.md` và file bản thảo hợp nhất `outputs/manuscript.md`.
 - **Output Artifact**: `outputs/voice_drift_report.md`.
 - **Human Gate**: `false`
@@ -89,7 +89,7 @@ Khi cần thực hiện kiểm định hoặc thao tác độc lập trên toàn
 ---
 
 ### [NODE 6: COLD_READ]
-- **Vai trò thực thi**: `quality-auditor` trong **Whole-Book Review Mode** (Critic độc lập — tuân thủ quy chuẩn SSOT tại [manuscript-cold-read.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/manuscript-cold-read.md)).
+- **Vai trò thực thi**: `quality-auditor` trong **Whole-Book Review Mode** (Critic độc lập — tuân thủ quy chuẩn SSOT tại [manuscript-cold-read.md](../rules/manuscript-cold-read.md)).
 - **Hàng rào mù tuyệt đối (Absolute Blind Barrier - `SEQ-006`)**:
   - **ĐƯỢC ĐỌC**: Duy nhất file `outputs/manuscript.md` vừa được biên dịch từ Node 4.
   - **CẤM ĐỌC**: `book_spine.md`, `terms.md`, `summaries.md`, `manifesto.md`, hay bất kỳ biên bản ghi nhớ nào.

@@ -2,7 +2,7 @@
 
 - **Vai trò thực thi**: `chapter-crafter` nạp linh hoạt 1–3 skills (`chapter-drafting` + `humanizer` co-pilot + `story-enrichment` khi có câu chuyện).
 - **Input**: `card.md`, `story_bank.md`, 2 đoạn văn mẫu từ `voice.md`, và `chapters/<chapter_id>/intent_ledger.md` (hoặc `foundation/decisions.md`).
-- **Quy tắc bắt buộc**: Nạp và tuân thủ [story-integrity.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/story-integrity.md) (anti-invention, gắn cờ `[EVIDENCE-REQUEST: req_XX]` khi thiếu chứng cứ).
+- **Quy tắc bắt buộc**: Nạp và tuân thủ [story-integrity.md](../../rules/story-integrity.md) (anti-invention, gắn cờ `[EVIDENCE-REQUEST: req_XX]` khi thiếu chứng cứ).
 - **Output Artifacts**: `chapters/<chapter_id>/sections/*.md`.
 - **Human Gate**: `false` (nhưng tuân thủ Checkpoint cộng tác tuần tự giữa các section).
 - **Quy tắc Chấp bút & Cộng tác Tuần tự**:

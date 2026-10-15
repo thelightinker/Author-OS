@@ -15,7 +15,7 @@ tags: [cold-read, whole-book, publishing-audit, reader-advocacy]
 ---
 
 ## 📌 Phân loại Trigger
-- **`stage_loaded`**: Được kích hoạt có định hướng bởi `quality-auditor` trong giai đoạn tổng hợp và đóng gói xuất bản bản thảo ([book-assembly.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/book-assembly.md)).
+- **`stage_loaded`**: Được kích hoạt có định hướng bởi `quality-auditor` trong giai đoạn tổng hợp và đóng gói xuất bản bản thảo ([book-assembly.md](../workflows/book-assembly.md)).
 
 ---
 
@@ -66,7 +66,7 @@ Auditor rà soát bản thảo toàn cục theo 10 câu hỏi cốt tử:
 ### 4 Phán Quyết Biên Tập Tư Vấn (Advisory Verdicts)
 | Phán quyết | Tiêu chuẩn chất lượng | Hành động tiếp theo |
 |:---|:---|:---|
-| **Ship** | Bản thảo hoàn thiện xuất sắc, lập luận chặt chẽ, nhịp điệu cuốn hút, thông điệp sắc bén. | Chuyển sang đóng gói xuất bản ([Export](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/book-assembly.md)). |
+| **Ship** | Bản thảo hoàn thiện xuất sắc, lập luận chặt chẽ, nhịp điệu cuốn hút, thông điệp sắc bén. | Chuyển sang đóng gói xuất bản ([Export](../workflows/book-assembly.md)). |
 | **Conditional** | Ý tưởng xuất sắc, chỉ vấp phải một số ma sát cục bộ ở các đoạn chuyển tiếp liên chương. | Chỉnh sửa cục bộ các section chỉ định trước khi xuất bản. |
 | **Major Revise** | Lập luận đứt gãy ở quy mô khối, một số chương chưa tự trả tiền thuê nhà, lặp nhận thức. | Tái cấu trúc lại một số chương mục trọng yếu. |
 | **Kill** | Luận đề cốt lõi không đứng vững trong toàn bộ trải nghiệm đọc, thiếu tính thực tiễn và tính mới. | Khuyến nghị tác giả định hình lại luận đề nền tảng. |

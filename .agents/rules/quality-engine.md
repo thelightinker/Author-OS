@@ -13,7 +13,7 @@ description: "Hệ thống kiểm định chất lượng bản thảo cho Criti
 ---
 
 ## 📌 Phân loại Trigger
-- **`stage_loaded`**: Được nạp có định hướng bởi `quality-auditor` và các workflow trong các giai đoạn kiểm định chất lượng ([chapter-cycle.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/workflows/chapter-cycle.md)).
+- **`stage_loaded`**: Được nạp có định hướng bởi `quality-auditor` và các workflow trong các giai đoạn kiểm định chất lượng ([chapter-cycle.md](../workflows/chapter-cycle.md)).
 
 ---
 
@@ -122,7 +122,7 @@ description: "Hệ thống kiểm định chất lượng bản thảo cho Criti
 ---
 
 ### 🧊 Layer 3 — Đọc Mù Toàn Sách (Whole-Book Cold Read)
-- **Tài liệu tham chiếu SSOT**: Toàn bộ quy chuẩn Layer 3 (Hàng rào đọc mù tuyệt đối `SEQ-006`, 10 Giả thuyết thẩm định đòn bẩy cao, Phân tầng rủi ro định tính `LOW / MEDIUM / HIGH RISK`, 4 Phán quyết ấn hành `Ship / Conditional / Major Revise / Kill`) và Quy trình Voice Audit Scan được quy định chuyên biệt tại **[manuscript-cold-read.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/manuscript-cold-read.md)**.
+- **Tài liệu tham chiếu SSOT**: Toàn bộ quy chuẩn Layer 3 (Hàng rào đọc mù tuyệt đối `SEQ-006`, 10 Giả thuyết thẩm định đòn bẩy cao, Phân tầng rủi ro định tính `LOW / MEDIUM / HIGH RISK`, 4 Phán quyết ấn hành `Ship / Conditional / Major Revise / Kill`) và Quy trình Voice Audit Scan được quy định chuyên biệt tại **[manuscript-cold-read.md](manuscript-cold-read.md)**.
 - **Kích hoạt tại**: `book-assembly.md` $\rightarrow$ `COLD_READ` & `VOICE_AUDIT`.
 
 ---

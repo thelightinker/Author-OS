@@ -48,7 +48,7 @@ version: 1.0.0
 
 4. **Tích Hợp Chi Tiết Từ `story_bank.md` & Ràng Buộc Liêm Chính Tự Sự Toàn Diện (P0 Invariant)**:
    - Khi beat trong `card.md` có trỏ đến mã thẻ `S-XXX` hoặc yêu cầu tái hiện câu chuyện đời thực/ký ức tác giả:
-     - **BẮT BUỘC (MUST)** nạp và tuân thủ [`.agents/rules/story-integrity.md`](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/story-integrity.md) và `COLLAB-011` / `COLLAB-012`.
+     - **BẮT BUỘC (MUST)** nạp và tuân thủ [`.agents/rules/story-integrity.md`](../../rules/story-integrity.md) và `COLLAB-011` / `COLLAB-012`.
      - **Bảo Vệ Liêm Chính 8 Chiều (Anti-Invention Coverage)**:
        1. *Dialogue*: Chỉ đưa lời thoại trong ngoặc kép khi có trích dẫn nguyên văn trong `Interview Content` hoặc tài liệu nguồn. CẤM tự sáng tác câu thoại cho tác giả hoặc nhân vật thật; dùng trần thuật gián tiếp hoặc giữ UNKNOWN.
        2. *Emotions*: Cảm xúc phải do tác giả tự xác nhận trong `Author Interpretation`. CẤM suy đoán hoặc kịch hóa cảm xúc nội tâm cực đoan.

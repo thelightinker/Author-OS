@@ -22,8 +22,8 @@ tags: [storytelling, provenance, epistemic-integrity]
   - Giao thức phỏng vấn Socratic bóc tách chi tiết giác quan hiện trường và ký ức tác giả.
   - Tiêu chuẩn xử lý vùng mơ hồ và phục hồi khoảng trống tự sự.
 - **Chỉ tham chiếu (Không định nghĩa lại):**
-  - Bất biến nền tảng Epistemic Provenance $\rightarrow$ `COLLAB-007` trong [human-agent-collaboration.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/human-agent-collaboration.md) và [book-constitution.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/book-constitution.md).
-  - Tiêu chuẩn kiểm định & nghiệm thu chất lượng $\rightarrow$ [quality-engine.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/quality-engine.md).
+  - Bất biến nền tảng Epistemic Provenance $\rightarrow$ `COLLAB-007` trong [human-agent-collaboration.md](human-agent-collaboration.md) và [book-constitution.md](book-constitution.md).
+  - Tiêu chuẩn kiểm định & nghiệm thu chất lượng $\rightarrow$ [quality-engine.md](quality-engine.md).
   - Schema thẻ tư liệu giai thoại S-XXX $\rightarrow$ `templates/story-bank-template.md` & `story_bank.md`.
   - Ràng buộc nạp cưỡng bức (Deterministic Binding) $\rightarrow$ `story-enrichment` và `chapter-drafting`.
 

@@ -2,7 +2,7 @@
 
 - **Vai trò thực thi**: `chapter-crafter` nạp skill `story-enrichment` kết hợp `author-excavation` (mode `chapter` hoặc `capture`).
 - **Input**: Các thẻ câu chuyện được gán trong `card.md`, `chapters/<chapter_id>/intent_ledger.md`, `.agents/skills/author-excavation/references/insight_ladder.md`.
-- **Quy tắc bắt buộc**: Nạp và tuân thủ tuyệt đối [story-integrity.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/story-integrity.md) (liêm chính dữ liệu câu chuyện, cấm bịa đặt chi tiết chưa phỏng vấn).
+- **Quy tắc bắt buộc**: Nạp và tuân thủ tuyệt đối [story-integrity.md](../../rules/story-integrity.md) (liêm chính dữ liệu câu chuyện, cấm bịa đặt chi tiết chưa phỏng vấn).
 - **Output Artifact**: Cập nhật chi tiết hiện trường trong `story_bank.md` và đồng bộ `chapters/<chapter_id>/intent_ledger.md`.
 - **Human Gate**: `false`
 - **Mục tiêu & Ràng buộc Understand-Before-Draft (COLLAB-011)**:

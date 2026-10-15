@@ -72,5 +72,5 @@ Khi chấp bút hoặc hiệu đính, Agent đối chiếu với 3 đoạn văn 
 
 ## 6. Kế Thừa Phản Hồi & Nắn Chỉnh Giọng (Feedback Carry-Forward & Drift Traps)
 
-- **Sổ bộ theo dõi lỗi lệch giọng**: Xem chi tiết tại [`.agents/memory/evolution/style_drift.md`](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/memory/evolution/style_drift.md).
+- **Sổ bộ theo dõi lỗi lệch giọng**: Xem chi tiết tại [`.agents/memory/evolution/style_drift.md`](../evolution/style_drift.md).
 - **Quy tắc bất biến khi biên tập**: Trước khi cắt tỉa câu chữ, Crafter **BẮT BUỘC** thực hiện kỷ luật `WHAT TO KEEP` — chọn ra 1–2 câu văn đắt giá mang đúng phong cách của Gold Passages để giữ nguyên 100%, không để việc gọt giũa làm mất đi linh hồn chân thật của tác giả.
