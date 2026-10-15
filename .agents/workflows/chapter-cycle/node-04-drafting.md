@@ -1,0 +1,24 @@
+# Node 4: SECTION_DRAFTING
+
+- **Vai trò thực thi**: `chapter-crafter` nạp linh hoạt 1–3 skills (`chapter-drafting` + `humanizer` co-pilot + `story-enrichment` khi có câu chuyện).
+- **Input**: `card.md`, `story_bank.md`, 2 đoạn văn mẫu từ `voice.md`, và `chapters/<chapter_id>/intent_ledger.md` (hoặc `foundation/decisions.md`).
+- **Quy tắc bắt buộc**: Nạp và tuân thủ [story-integrity.md](file:///d:/Downloads/AI%20Agent%20Kits/Agent%20Kits/Writing%20Agent/.agents/rules/story-integrity.md) (anti-invention, gắn cờ `[EVIDENCE-REQUEST: req_XX]` khi thiếu chứng cứ).
+- **Output Artifacts**: `chapters/<chapter_id>/sections/*.md`.
+- **Human Gate**: `false` (nhưng tuân thủ Checkpoint cộng tác tuần tự giữa các section).
+- **Quy tắc Chấp bút & Cộng tác Tuần tự**:
+  - **Bước 0 (bắt buộc, trước khi viết)**: chạy `python .agents/scripts/memory_cli.py get-writing-context --chapter <chapter_id>` và đọc bốn khối kết quả. Khi viết: (1) phần mở chương phải nối tiếp được với đoạn cuối chương trước, không nhắc lại điều đã nói ở đó; (2) không dùng lại ẩn dụ, ví dụ hoặc câu chuyện đã xuất hiện trong đoạn cuối hay tóm tắt chương trước (trừ ngoại lệ mỏ neo); (3) áp dụng các phản hồi của tác giả ở khối thứ ba như quy tắc viết. Nếu cả bốn khối đều là (không có) thì bỏ qua bước này, không hỏi tác giả. Không nhắc tên lệnh hay các khối này với tác giả.
+  - **Tuân thủ Sổ Ý định (Intent Ledger Adherence)**: Crafter bắt buộc đối chiếu `chapters/<chapter_id>/intent_ledger.md` trước khi viết mỗi section: (1) Tuân thủ tuyệt đối các quyết định đã xác nhận mang nhãn `[CONFIRMED]` và lằn ranh cấm kỵ (Red Lines) của tác giả; (2) Đối với các mục mang nhãn `[HYPOTHESIS]`, chỉ trình bày như một lăng kính/góc nhìn gợi mở, TUYỆT ĐỐI CẤM tự ý nâng cấp thành chân lý phổ quát hay khẳng định như một quy luật tâm lý/khoa học đã kiểm chứng.
+  - **Chỉ thị chống lặp và neo chất liệu**: Trước khi viết mỗi section: (1) Đọc khối Y_DA_DUNG ở bước 0 và không mở lại bất kỳ ý hay hình ảnh nào trong đó; ngoại lệ mỏ neo: cho phép tối đa 2 câu tham chiếu ngắn đến ý/hình ảnh của chương trước để nối mạch, với điều kiện câu ngay sau phải đưa ra một góc nhìn mới hoặc đào sâu thêm một tầng nhận thức mới, tuyệt đối không diễn giải lại cơ chế cũ. (2) Lấy `new_for_reader` của các beat đứng trước trong card làm danh sách điều đã nói trong chương và không diễn giải lại. (3) Section phải đem lại đúng `new_for_reader` của beat của nó. (4) Mỗi đoạn phải có ít nhất một chi tiết cụ thể lấy từ `anchor` hoặc từ story được gán cho beat. Beat có `anchor` là none chỉ được viết tối đa 2 câu làm câu nối. (5) Câu khẳng định tổng quát (về mọi người, luôn luôn, không bao giờ, ai cũng, chắc chắn) chỉ được viết khi beat có từ 2 `anchor` trở lên; có 1 `anchor` thì viết trong phạm vi trường hợp đó (ví dụ "trong trường hợp này", "với tôi"); không có `anchor` thì không khẳng định. (6) Tự hỏi: câu này có thể xuất hiện nguyên xi trong bất kỳ cuốn sách nào cùng chủ đề không? Nếu có, thay bằng chi tiết cụ thể từ `anchor` hoặc cắt. (7) Không mở section bằng nhận xét chung về con người nếu không có `anchor`. Nếu card không có `new_for_reader` và `anchor` (card cũ) thì chỉ áp dụng (1), (6) và (7).
+  1. *Quy chuẩn Heading H2*: Mỗi file section bắt đầu bằng một tiêu đề H2 (`## [Tiêu đề Section]`) dẫn đường nhận thức.
+  2. *Chấp bút tuần tự từng Section (Sequential Section Cadence)*:
+     - Viết xong Section $i$ $\rightarrow$ Xuất thông báo ngắn (số từ, liên kết file) $\rightarrow$ Trình tác giả xem / phản hồi trước khi chấp bút Section $i+1$.
+     - Tác giả có thể can thiệp chỉnh sửa nhanh, override hoặc cho lệnh viết tiếp.
+  3. *Co-pilot Humanizer*: Nạp `humanizer` song hành ngay trong lúc chấp bút để khử sạch các mẫu câu máy móc, đảm bảo văn tự nhiên từ bản nháp đầu tiên.
+  4. *Định dạng CONV-001*: Khối văn xuôi tự sự liên tục, không lạm dụng gạch đầu dòng (xem chi tiết trong `chapter-drafting/SKILL.md`).
+  5. *Semantic visual placeholders*: `[VISUAL-SUGGESTION: ...]`.
+  6. *Kế thừa phản hồi (Feedback Carry-Forward)*: Trước khi chấp bút section mới, Crafter chủ động rà soát các phản hồi của tác giả ở các section trước và đối chiếu `memory/evolution/style_drift.md`. Nếu tác giả xác nhận một lỗi viết lặp lại, ghi nhận vào Section 3 của `style_drift.md`.
+- **Cơ chế Yield Nội Bộ (Internal Evidence Gap Sub-Loop)**:
+  - Khi gặp số liệu hoặc luận điểm thực nghiệm chưa rõ nguồn: chèn `[EVIDENCE-REQUEST: req_XX]` vào văn bản, lập `chapters/<id>/evidence_request.md` và tạm ngừng viết (yield).
+  - Orchestrator thực hiện Context Reset $\rightarrow$ kích hoạt `book-architect` + `evidence-excavation` xử lý $\rightarrow$ Context Reset $\rightarrow$ Crafter tiếp tục hoàn thiện section. Đây là cơ chế yield/resume nội bộ của Node 4, không tạo thêm node trạng thái vĩ mô.
+- **DoD**: Toàn bộ các section files đã được viết tuần tự, có tiêu đề H2, vượt qua rà soát humanizer và đạt hạn ngạch từ.
+- **Transition Path**: `SECTION_DRAFTING` $\rightarrow$ `MECHANICAL_SCREEN`.

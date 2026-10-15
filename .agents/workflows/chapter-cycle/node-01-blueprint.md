@@ -1,0 +1,21 @@
+# Node 1: BLUEPRINT
+
+- **Vai trò thực thi**: `chapter-crafter` nạp skill `chapter-blueprinting` (kết hợp `author-excavation` nếu cần làm rõ luận điểm gốc).
+- **Input**: `foundation/manifesto.md`, `book_spine.md`, `terms.md`, `story_bank.md`, `knowledge/structure/chapter_shapes.md`, và `chapters/<chapter_id>/intent_ledger.md` (nếu đã có).
+- **Output Artifact**: `chapters/<chapter_id>/card.md` với trạng thái `[DRAFT-READY]`.
+- **Human Gate**: `false` (nhưng bắt buộc dừng tại Checkpoint Pre-Card Intent Echo trong phiên chat trước khi sinh file).
+- **Quy trình 2 Pha Nội Bộ (Two-Phase Protocol)**:
+  - **Pha 1 (Pre-Card Intent Echo & Yield Checkpoint)**:
+    - Trước khi sinh file `card.md`, Agent đối chiếu Spine với `manifesto.md` và `intent_ledger.md`.
+    - Xuất bản bản tóm tắt **Pre-Card Intent Echo** gồm 5 trường vào chat: (1) Core Governing Thesis, (2) Boundary Conditions, (3) Author Red Lines, (4) Concrete Anchors, (5) Open Ambiguities.
+    - **DỪNG HẲN (Yield)** chờ tác giả phản hồi. CẤM TUYỆT ĐỐI gọi tool sinh file `card.md` khi tác giả chưa gửi tín hiệu xác nhận ("ok", "duyệt", hoặc điều chỉnh) trong phiên làm việc.
+  - **Pha 2 (Card Generation)**:
+    - Sau khi nhận được phản hồi của tác giả, ghi nhận các quyết định vào `chapters/<chapter_id>/intent_ledger.md`.
+    - **Học từ sửa tay (Feedback Loop)**: Chạy `python .agents/scripts/memory_cli.py check-draft-diff --all`. Nếu có thay đổi do tác giả sửa tay: rút tối đa 3 quy tắc viết từ các thay đổi đó và ghi vào `feedback.jsonl`.
+    - Phân rã cấu trúc theo mô hình 3 tầng (`Part > Chapter > Section`) hoặc 4 tầng (`Part > Chapter > Section > Subsection/Beat`).
+    - Bẻ gãy dòng Spine của chương thành 3–5 section files (`00_open.md`, `01_sec1.md`, ...).
+    - Ấn định trần từ `budget_words_max` cụ thể cho từng section (tổng 3,500–5,000 từ).
+    - Gán các khái niệm từ `terms.md` và mã câu chuyện `S-XXX` từ `story_bank.md`.
+    - Xác định Khoảnh khắc chuyển hóa 5 giây (The 5-Second Transformation Moment).
+- **DoD**: File `chapters/<chapter_id>/card.md` tồn tại và đầy đủ cấu trúc Card v3 theo beats sau khi đã có xác nhận Echo từ tác giả.
+- **Transition Path**: `BLUEPRINT` $\rightarrow$ `GATE_3_BLUEPRINT`.

@@ -1,0 +1,78 @@
+schema_version: "2.0.0"
+profile_version: "2.0.0"
+author: "Author Name · Pseudonym"
+last_calibrated: "2026-10-01"
+scope: "global_cross_book"
+
+# 1. Nhịp thở câu chữ (Sentence Cadence & Per-Word Value)
+writing_philosophy: "Tối đa hóa giá trị của từng câu và từng chữ. Ưu tiên rõ ràng và đủ ý trước, cô đọng sau. Độ dài phục vụ độ sâu của tư tưởng, không ép câu ngắn một cách cơ học."
+
+sentence_cadence:
+  short_punchy:
+    priority: "balanced"
+    range_words: "1-7 từ"
+    role: "Điểm dừng nhận thức, cú chốt đòn bẩy, nhịp đập dứt khoát (dùng sau khi đã giải thích và dựng bối cảnh đủ đầy)"
+  medium_causal:
+    priority: "backbone"
+    range_words: "8-18 từ"
+    role: "Xương sống phân tích logic, liên kết nguyên nhân - kết quả sáng rõ, bình thản, giúp độc giả hiểu trọn vẹn cơ chế"
+  long_sensory_and_nuance:
+    priority: "essential_for_depth"
+    range_words: "19-38 từ"
+    role: "Dựng bối cảnh hiện trường xúc giác, phân tích sắc thái vùng xám, giải thích các lập luận đa tầng mà câu ngắn không thể truyền tải"
+  monotone_penalty: "high" # Phạt nặng nếu các câu có độ dài đều chằn chặn gây buồn ngủ
+
+# 2. Ngân hàng từ vựng định hướng (Vocabulary Baseline)
+vocabulary:
+  preferred:
+    - "thử nghiệm"
+    - "bước đi"
+    - "hiện trường"
+    - "vấp ngã"
+    - "quay lại"
+    - "thực chất"
+    - "nguyên lý"
+    - "đòn bẩy"
+    - "tự do"
+    - "bản sắc"
+    - "chân thành"
+    - "khoảng lặng"
+    - "dữ liệu nhận thức"
+  avoid:
+    - "bức tranh toàn cảnh"
+    - "bức tranh tổng thể"
+    - "chiếc chìa khóa vạn năng"
+    - "hành trình chuyển hóa"
+    - "nâng tầm"
+    - "bứt phá giới hạn"
+    - "thế giới 4.0"
+    - "kỷ nguyên số phát triển như vũ bão"
+    - "đừng ngần ngại"
+    - "hãy nhớ rằng"
+    - "chúng ta hãy cùng tìm hiểu"
+    - "trong thế giới ngày nay"
+    - "không thể phủ nhận rằng"
+    - "điều quan trọng cần ghi nhớ là"
+
+# 3. Định vị & Sắc thái giọng văn (Tone & Stance)
+tone:
+  intimate: true # Người đồng đội ngồi xuống cạnh độc giả, không đứng trên bục giảng
+  preachy: false # CẤM giọng guru giáo điều, dạy dỗ hay ban phát chân lý
+  academic: "low" # Tránh dùng thuật ngữ trừu tượng phức tạp để tỏ ra nguy hiểm
+  honest_uncertainty: true # Sẵn sàng nói "tôi chưa biết", chia sẻ từ góc nhìn người đi trước một bước
+  emotional_grounding: "quiet_confidence" # Truyền cảm hứng tự thân, bình tĩnh, không hô hào khẩu hiệu
+
+# 4. Các cấu trúc chữ ký được phê duyệt trước (Pre-approved Signatures)
+pre_approved_signatures:
+  - pattern: "contrastive_short_punchline"
+    example: "Tôi không cần một kế hoạch hoàn hảo. Tôi chỉ cần biết bước tiếp theo."
+    rationale: "Cú đảo nhận thức mang phong cách triết lý hành động ngắn của tác giả"
+  - pattern: "conversational_fragment"
+    example: "Không phải vì thiếu động lực. Mà vì kiệt sức."
+    rationale: "Câu cụt có chủ ý tạo khoảng nghỉ suy ngẫm cho độc giả"
+  - pattern: "framework_arrow"
+    example: "Trải nghiệm → Thử nghiệm → Đòn bẩy"
+    rationale: "Sơ đồ dòng chảy nhận thức trong các khung phương pháp"
+  - pattern: "honest_reflection_question"
+    example: "Nếu ngay lúc này dừng lại, điều gì thực sự sẽ mất đi?"
+    rationale: "Câu hỏi tu từ kích hoạt tự phản tỉnh"

@@ -1,0 +1,27 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python & Environment
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+*.bak
+
+# Book Projects & Manuscripts (SSOT: Private)
+Books/
+sources/
+outputs/
+*.pdf
+
+# Snapshots & Personal Audits
+kit-snapshot*.md
+loi2.md
+writing-agent-deep-audit.md
+
+# IDE & Internal State
+.superpowers/
+.worktrees/

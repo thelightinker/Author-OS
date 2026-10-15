@@ -1,0 +1,244 @@
+{
+  "$schema": "schemas/manifest.schema.json",
+  "schemaVersion": "1.0.0",
+  "kitVersion": "2026.1.0",
+  "name": "book-writing-agent",
+  "description": "Agent Kit chuyên dụng kiến tạo và chấp bút các bản thảo sách phi hư cấu (nonfiction) từ 30,000–60,000 từ chuẩn mực cao theo kiến trúc module hóa từng section.",
+  "topology": {
+    "type": "orchestrator-specialists-critic",
+    "spectrumPosition": "balanced-modular",
+    "orchestrator": "master-orchestrator",
+    "rightAltitudeRationale": "L0 System Controller quản trị vòng đời và chuyển pha, 2 L1 Specialist Agents điều phối vĩ mô (chiến lược, cấu trúc) và vi mô (phỏng vấn, blueprint, chấp bút module từng phần, biên tập 3 lớp), kèm 1 L1 Quality Auditor độc lập bảo vệ trải nghiệm và giá trị của độc giả."
+  },
+  "metadata": {
+    "author": "Kit Architect",
+    "domain": "Book Writing & Publishing (Nonfiction)",
+    "tags": ["book-writing", "nonfiction", "modular-sections", "leads-to", "story-bank", "anti-repetition", "quality-engine"]
+  },
+  "contracts": {
+    "default_agent": "master-orchestrator",
+    "entrypoint_workflow": "book-genesis"
+  },
+  "artifact_contracts": {
+    "consumes": [
+      {
+        "type": "source_material",
+        "preferred_sources": ["sources/raw", "sources/notes"]
+      }
+    ],
+    "produces": [
+      {
+        "type": "manuscript",
+        "default_scope": "project",
+        "path_pattern": "outputs/manuscript.md",
+        "promotable_to": "outputs/manuscript.md"
+      }
+    ],
+    "workspace_dir": "Books/<book_slug>"
+  },
+  "agents": {
+    "master-orchestrator": {
+      "role": "master-orchestrator",
+      "path": "agent/master-orchestrator.md",
+      "version": "1.0.0",
+      "model": "inherit",
+      "tools": ["Read", "Grep", "Glob", "Agent", "Bash"],
+      "delegatesTo": ["book-architect", "chapter-crafter", "quality-auditor"],
+      "requires": {
+        "agents": {
+          "book-architect": "^1.0.0",
+          "chapter-crafter": "^1.0.0",
+          "quality-auditor": "^1.0.0"
+        },
+        "skills": {}
+      }
+    },
+    "book-architect": {
+      "role": "specialist-agent",
+      "domain": "Macro Strategy, Spine Architecture & Thesis Defense",
+      "path": "agent/book-architect.md",
+      "version": "1.0.0",
+      "model": "inherit",
+      "tools": ["Read", "Grep", "Glob", "Edit", "Write"],
+      "ownedSkills": ["genesis-interview", "spine-architecture", "evidence-excavation", "falsification-steelmanning"],
+      "memoryScope": ["shared", "domains/macro-strategy"],
+      "requires": {
+        "skills": {
+          "genesis-interview": "^1.0.0",
+          "spine-architecture": "^1.0.0",
+          "evidence-excavation": "^1.0.0",
+          "falsification-steelmanning": "^1.0.0"
+        }
+      }
+    },
+    "chapter-crafter": {
+      "role": "specialist-agent",
+      "domain": "Micro Socratic Excavation, Section Drafting & 3-Pass Craft Polish",
+      "path": "agent/chapter-crafter.md",
+      "version": "1.0.0",
+      "model": "inherit",
+      "tools": ["Read", "Grep", "Glob", "Edit", "Write"],
+      "ownedSkills": ["chapter-blueprinting", "story-enrichment", "chapter-drafting", "editorial-revision", "falsification-steelmanning", "humanizer", "manuscript-formatting"],
+      "memoryScope": ["shared", "domains/chapter-craft"],
+      "requires": {
+        "skills": {
+          "chapter-blueprinting": "^1.0.0",
+          "story-enrichment": "^1.0.0",
+          "chapter-drafting": "^1.0.0",
+          "editorial-revision": "^1.0.0",
+          "falsification-steelmanning": "^1.0.0",
+          "humanizer": "^3.1.0",
+          "manuscript-formatting": "^1.0.0"
+        }
+      }
+    },
+    "quality-auditor": {
+      "role": "specialist-agent",
+      "domain": "Independent Reader Advocacy, Prose Cadence, Structural Coherence & Whole-Book Evaluation",
+      "path": "agent/quality-auditor.md",
+      "version": "1.0.0",
+      "model": "inherit",
+      "tools": ["Read", "Grep", "Glob"],
+      "ownedSkills": ["falsification-steelmanning"],
+      "memoryScope": ["shared", "domains/quality-audit"],
+      "requires": {
+        "skills": {
+          "falsification-steelmanning": "^1.0.0"
+        }
+      }
+    }
+  },
+  "skills": {
+    "genesis-interview": {
+      "path": "skills/genesis-interview/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "spine-architecture": {
+      "path": "skills/spine-architecture/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "evidence-excavation": {
+      "path": "skills/evidence-excavation/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "falsification-steelmanning": {
+      "path": "skills/falsification-steelmanning/SKILL.md",
+      "version": "1.0.0",
+      "shared": true
+    },
+    "chapter-blueprinting": {
+      "path": "skills/chapter-blueprinting/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "story-enrichment": {
+      "path": "skills/story-enrichment/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "chapter-drafting": {
+      "path": "skills/chapter-drafting/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "editorial-revision": {
+      "path": "skills/editorial-revision/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    },
+    "humanizer": {
+      "path": "skills/humanizer/SKILL.md",
+      "version": "3.1.0",
+      "shared": false
+    },
+    "manuscript-formatting": {
+      "path": "skills/manuscript-formatting/SKILL.md",
+      "version": "1.0.0",
+      "shared": false
+    }
+  },
+  "workflows": {
+    "book-genesis": {
+      "path": "workflows/book-genesis.md",
+      "version": "1.0.0"
+    },
+    "chapter-cycle": {
+      "path": "workflows/chapter-cycle.md",
+      "version": "1.0.0"
+    },
+    "book-assembly": {
+      "path": "workflows/book-assembly.md",
+      "version": "1.0.0"
+    }
+  },
+  "rules": {
+    "authorship-contract": {
+      "path": "rules/authorship-contract.md",
+      "version": "1.0.0"
+    },
+    "book-constitution": {
+      "path": "rules/book-constitution.md",
+      "version": "2.0.0"
+    },
+    "quality-engine": {
+      "path": "rules/quality-engine.md",
+      "version": "2.2.0"
+    },
+    "manuscript-cold-read": {
+      "path": "rules/manuscript-cold-read.md",
+      "version": "1.0.0"
+    },
+    "human-agent-collaboration": {
+      "path": "rules/human-agent-collaboration.md",
+      "version": "1.0.0"
+    },
+    "chat-artifact-interface": {
+      "path": "rules/chat-artifact-interface.md",
+      "version": "1.0.0"
+    },
+    "story-integrity": {
+      "path": "rules/story-integrity.md",
+      "version": "1.0.0"
+    }
+  },
+  "memory": {
+    "topology": "hybrid-lean-4-tier",
+    "index": "memory/MEMORY.md",
+    "tiers": ["author", "experience", "project", "evolution"],
+    "cli": "scripts/memory_cli.py"
+  },
+  "knowledge": {
+    "index": "knowledge/INDEX.json",
+    "categories": [
+      "craft",
+      "five_star",
+      "persuasion",
+      "storytelling",
+      "structure"
+    ]
+  },
+  "scripts": {
+    "memory_cli": {
+      "path": "scripts/memory_cli.py",
+      "version": "2.0.0",
+      "description": "Pure stdlib JIT query and atomic validation tool for Hybrid Lean Memory"
+    },
+    "assemble_chapter": {
+      "path": "scripts/assemble_chapter.py",
+      "version": "1.1.0",
+      "description": "Deterministic modular section assembler and whole-book manuscript compiler"
+    },
+    "repair_invariants": {
+      "path": "scripts/repair_invariants.py",
+      "version": "1.0.0",
+      "description": "Deterministic stdlib mechanical text repair and linter"
+    }
+  },
+  "orchestration": {
+    "execution_policy": "execution_policy.json",
+    "complexity_ladder": ["L0_DIRECT", "L1_ROUTED", "L2_STAGED", "L3_FORK_JOIN"]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "3.0.0",
+  "reservoir_name": "Writing Agent Tactical Knowledge Reservoir",
+  "units": [
+    {
+      "id": "K-CRAFT-001",
+      "title": "Prose Cadence & Sentence Rhythm",
+      "triggers": ["rhythm", "cadence", "monotony", "pacing", "sentence_length"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["drafting", "revision"],
+      "level": "tactic",
+      "avoid_when": "Chưa có bản thảo hoặc đang trong giai đoạn outline cấu trúc vĩ mô",
+      "path": "craft/prose_cadence.md",
+      "summary": "Kỹ thuật phối ngẫu câu ngắn đanh thép (1-7 chữ) với câu dài gợi cảm giác (20-35 chữ), tránh nhịp ru ngủ đều đều."
+    },
+    {
+      "id": "K-CRAFT-002",
+      "title": "Zinsser Clutter Pruning",
+      "triggers": ["wordiness", "passive_voice", "clutter", "editing_pass_2", "fluff"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["drafting", "revision"],
+      "level": "tactic",
+      "avoid_when": "Bản nháp đầu tiên đang trong giai đoạn khai phá ý tưởng thô",
+      "path": "craft/zinsser_clutter_pruning.md",
+      "summary": "Phẫu thuật cắt gọt từ thừa vô nghĩa, trạng từ đệm và cụm từ hành chính hóa để văn phong sắc bén."
+    },
+    {
+      "id": "KU-CRAFT-003",
+      "title": "Reader Momentum & Transition Architecture",
+      "triggers": ["reader_momentum", "transition", "boundary_drop_off", "dead_end", "pacing_fatigue", "open_loop", "leads_to_friction"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor", "book-architect"],
+      "stages": ["architecture", "drafting", "revision"],
+      "level": "tactic",
+      "avoid_when": "Section đơn lẻ không có liên kết trước sau",
+      "path": "craft/reader_momentum.md",
+      "summary": "Kiến trúc động lực đọc dựa trên cặp nhịp thở Local Closure ➔ Horizon Expansion, 5 cơ chế mở chân trời và công cụ hỗ trợ nhịp đọc Pacing Support."
+    },
+    {
+      "id": "K-CRAFT-004",
+      "title": "Recognition Redundancy & Repetition Cure",
+      "triggers": ["recognition_redundancy", "semantic_repetition", "lap_y", "redundancy", "looping", "restatement"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["drafting", "revision"],
+      "level": "diagnostic",
+      "avoid_when": "Đang định nghĩa khái niệm lần đầu tiên trong chương mở đầu",
+      "path": "craft/recognition_redundancy.md",
+      "summary": "Chẩn đoán và xử lý triệt để căn bệnh lặp ý, vòng lặp giải thích luẩn quẩn giữa các section và chương sách."
+    },
+    {
+      "id": "K-CRAFT-005",
+      "title": "Climax Inflation & Melodrama Cure",
+      "triggers": ["climax_inflation", "melodrama", "over_dramatization", "inflated_stakes", "sensationalism"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["drafting", "revision"],
+      "level": "diagnostic",
+      "avoid_when": "Tác phẩm hư cấu hoặc tiểu thuyết giả tưởng",
+      "path": "craft/climax_inflation.md",
+      "summary": "Khử bỏ tình trạng thổi phồng kịch tính và cảm xúc giả tạo; neo chặt vào độ thô mộc của sự thật hiện trường."
+    },
+    {
+      "id": "K-STRUCT-001",
+      "title": "Domino Leads-To Interlock",
+      "triggers": ["leads_to", "chapter_transition", "domino", "spine_design", "flow"],
+      "applicable_roles": ["book-architect"],
+      "stages": ["foundation", "architecture"],
+      "level": "concept",
+      "avoid_when": "Đang viết chi tiết câu từ vi mô trong section",
+      "path": "structure/domino_leads_to.md",
+      "summary": "Thiết kế áp lực nhân quả: kết thúc chương A tạo ra vết nứt nhận thức bắt buộc độc giả phải lật sang chương B."
+    },
+    {
+      "id": "K-STRUCT-002",
+      "title": "Chapter Shapes Catalog (5 Nonfiction Archetypes)",
+      "triggers": ["chapter_shapes", "shape", "blueprinting", "structure", "myth_busting", "toolkit", "case_dissection", "paradox", "framework"],
+      "applicable_roles": ["book-architect", "chapter-crafter"],
+      "stages": ["architecture"],
+      "level": "concept",
+      "avoid_when": "Chương chưa xác định được Spine và Core Thesis",
+      "path": "structure/chapter_shapes.md",
+      "summary": "Catalog 5 hình thái chương phi hư cấu: Myth-Buster, Toolkit, Case-Dissection, Paradox-Resolution, Framework-Builder."
+    },
+    {
+      "id": "K-STORY-001",
+      "title": "Curiosity Gap & Narrative Tension",
+      "triggers": ["curiosity_gap", "hook", "storytelling", "opening", "tension"],
+      "applicable_roles": ["chapter-crafter"],
+      "stages": ["excavation", "drafting"],
+      "level": "tactic",
+      "avoid_when": "Module tóm tắt kỹ thuật hoặc tài liệu tra cứu thuần túy",
+      "path": "storytelling/curiosity_gap.md",
+      "summary": "Mở hố tò mò nhận thức ngay từ đoạn mở đầu và trì hoãn đóng lại để giữ chân độc giả liên tục."
+    },
+    {
+      "id": "KU-STORY-002",
+      "title": "Narrative Craft & Story Engine",
+      "triggers": ["flat_story", "abstract_narrative", "telling_not_showing", "missing_tension", "story_craft"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["excavation", "drafting"],
+      "level": "tactic",
+      "avoid_when": "Không có câu chuyện hoặc tình huống cụ thể trong beat",
+      "path": "storytelling/narrative_craft.md",
+      "summary": "Khung xương 4 trụ cột tự sự, hộp dụng cụ kỹ nghệ giác quan và khuôn mẫu sân khấu 7 bước của Fususu."
+    },
+    {
+      "id": "KU-PERS-001",
+      "title": "Transformation Bridge & SWAP Preset",
+      "triggers": ["skeptical_reader", "trust_chasm", "persuasive_prose", "book_intro", "action_friction"],
+      "applicable_roles": ["book-architect", "chapter-crafter", "quality-auditor"],
+      "stages": ["foundation", "architecture", "drafting"],
+      "level": "tactic",
+      "avoid_when": "Độc giả đã hoàn toàn đồng thuận với tiền đề",
+      "path": "persuasion/transformation_bridge.md",
+      "summary": "5 đòn bẩy thuyết phục phi cưỡng bức và khuôn mẫu ghép sẵn SWAP giúp dẫn dắt độc giả từ phòng vệ sang tự nguyện đón nhận."
+    },
+    {
+      "id": "K-MAP-5STAR",
+      "title": "Differential Diagnostic Reasoning Map",
+      "triggers": ["audit", "review", "diagnose", "friction", "revision", "quality_check"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor", "book-architect"],
+      "stages": ["revision"],
+      "level": "diagnostic",
+      "avoid_when": "Đang trong giai đoạn drafting tự do chưa có sản phẩm kiểm định",
+      "path": "five_star/DIAGNOSTIC_REASONING_MAP.md",
+      "summary": "Bản đồ phân biệt các giả thuyết nguyên nhân cản trở trải nghiệm đọc và chỉ dẫn mở KU thích hợp để suy luận sâu."
+    },
+    {
+      "id": "KU-5STAR-001",
+      "title": "Guide Posture & Vulnerability as Authority",
+      "triggers": ["preachy_tone", "arrogant_prose", "hero_syndrome", "alienation", "intimacy"],
+      "applicable_roles": ["book-architect", "chapter-crafter", "quality-auditor"],
+      "stages": ["foundation", "drafting"],
+      "level": "concept",
+      "avoid_when": "Tài liệu kỹ thuật khách quan không có yếu tố giọng tác giả",
+      "path": "five_star/01_guide_posture.md",
+      "summary": "Định vị người dẫn đường (Guide vs Hero), dùng sự bất toàn trong quá khứ để xây dựng niềm tin và trò chuyện 1-1."
+    },
+    {
+      "id": "KU-5STAR-002",
+      "title": "Governing Compression & The Pruning Razor",
+      "triggers": ["idea_sprawl", "rambling_prose", "lack_of_focus", "kitchen_sink", "compression"],
+      "applicable_roles": ["book-architect", "chapter-crafter", "quality-auditor"],
+      "stages": ["architecture", "revision"],
+      "level": "tactic",
+      "avoid_when": "Đang brainstorming mở rộng ý tưởng ban đầu",
+      "path": "five_star/02_governing_compression.md",
+      "summary": "Khẩu quyết Tóm lại - Hãy nhớ và lưỡi dao cắt gọt dũng cảm loại bỏ các ý tưởng phụ để bảo vệ trục nhận thức."
+    },
+    {
+      "id": "KU-5STAR-003",
+      "title": "Cognitive Metaphor & Conceptual Bridging",
+      "triggers": ["abstract_fatigue", "dry_theory", "glazing_eyes", "dense_jargon", "metaphor"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["drafting", "revision"],
+      "level": "tactic",
+      "avoid_when": "Tình huống đời sống thực tế đã đủ rõ ràng và gần gũi",
+      "path": "five_star/03_cognitive_metaphor.md",
+      "summary": "Sử dụng trải nghiệm vật lý cụ thể để bắc cầu nhận thức cho khái niệm trừu tượng, giải khát sa mạc chữ."
+    },
+    {
+      "id": "KU-5STAR-004",
+      "title": "Sensory Reenactment (T.N.T Narrative)",
+      "triggers": ["flat_narrative", "report_style_story", "emotionless_prose", "telling_not_showing"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["excavation", "drafting"],
+      "level": "tactic",
+      "avoid_when": "Đoạn văn phân tích số liệu hoặc lập luận logic thuần túy",
+      "path": "five_star/04_sensory_reenactment.md",
+      "summary": "Tái hiện hiện trường sống động qua 3 kênh Thấy - Nghe - Trải, xóa bỏ hoàn toàn lối kể chuyện báo cáo hành chính."
+    },
+    {
+      "id": "KU-5STAR-005",
+      "title": "Motivation-Capability Equilibrium & Friction Design",
+      "triggers": ["inspiration_trap", "inactionable_advice", "high_friction", "reader_burnout", "micro_steps"],
+      "applicable_roles": ["book-architect", "chapter-crafter", "quality-auditor"],
+      "stages": ["architecture", "drafting"],
+      "level": "concept",
+      "avoid_when": "Chương thuần túy về bối cảnh lịch sử hoặc triết lý nhận thức",
+      "path": "five_star/05_motivation_capability.md",
+      "summary": "Cân bằng tam giác Chuyện - Nguyên lý - Bản đồ vi mô, hạ thấp ma sát kích hoạt để chuyển hóa thực lực độc giả."
+    },
+    {
+      "id": "KU-5STAR-006",
+      "title": "Subversive Linguistic Wit & Cognitive Refreshment",
+      "triggers": ["monotonous_tone", "solemn_overload", "academic_dryness", "boring_cliche", "linguistic_wit"],
+      "applicable_roles": ["chapter-crafter", "quality-auditor"],
+      "stages": ["drafting", "revision"],
+      "level": "tactic",
+      "avoid_when": "Đang diễn giải biến cố đau buồn hoặc chấn thương tâm lý nghiêm trọng",
+      "path": "five_star/06_subversive_wit.md",
+      "summary": "Bẻ lái ngôn từ bất ngờ (tách từ nhân hóa, đi thêm một bước, tái định danh) để hạ nhiệt căng thẳng nhận thức."
+    }
+  ]
+}
